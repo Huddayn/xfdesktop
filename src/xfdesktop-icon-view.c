@@ -3673,6 +3673,8 @@ static inline XfdesktopIcon *
 xfdesktop_icon_view_icon_in_cell_raw(XfdesktopIconView *icon_view,
                                      gint idx)
 {
+    g_return_val_if_fail(idx >= 0, NULL);
+
     XfdesktopIcon *icon = icon_view->priv->grid_layout[idx];
     
     if((gpointer)0xdeadbeef == icon)
